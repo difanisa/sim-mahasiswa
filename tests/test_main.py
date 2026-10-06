@@ -13,7 +13,7 @@ class TestMahasiswa:
         mhs = Mahasiswa("2024SI006", nama_panjang, "SI", 2024, 3.0)
 
         assert mhs.nama == nama_panjang
-        
+
     def test_mahasiswa_valid(self):
         mhs = Mahasiswa(
             "2024SI001",
@@ -73,3 +73,23 @@ class TestDaftarMahasiswa:
 
         with pytest.raises(ValueError):
             db.tambah(m2)
+
+    def test_edit_ipk(self):    
+        db = DaftarMahasiswa()
+        mhs = Mahasiswa("2024SI007", "Eka", "SI", 2024, 3.0)
+
+        db.tambah(mhs)
+
+        berhasil = db.edit_ipk("2024SI007", 3.75)
+
+        assert berhasil is True
+        assert mhs.ipk == 3.75
+
+    def test_edit_ipk_tidak_valid(self):
+        db = DaftarMahasiswa()
+        mhs = Mahasiswa("2024SI008", "Fani", "SI", 2024, 3.0)
+
+        db.tambah(mhs)
+
+        with pytest.raises(ValueError):
+            db.edit_ipk("2024SI008", 5.0)
