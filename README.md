@@ -40,3 +40,13 @@ sim-mahasiswa/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+
+## Dokumentasi
+
+### Tampilan Program
+
+![Tampilan Program](docs/screenshoot1.jpg)
+
+### Hasil Unit Testing
+
+![Hasil Unit Testing](docs/screenshoot2.jpg)

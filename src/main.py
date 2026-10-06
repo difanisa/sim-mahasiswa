@@ -67,7 +67,7 @@ def main():
     """Loop utama aplikasi."""
     while True:
         tampilkan_menu()
-        pilihan = console.input("\nPilih [0-4]: ")
+        pilihan = console.input("\nPilih [0-5]: ")
 
         if pilihan == "1":
             tambah_mahasiswa()
